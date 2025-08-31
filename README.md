@@ -1,5 +1,9 @@
 # セキュリティチェックシート
 
+[![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](LICENSE)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/yuzoiwasaki/security-checksheet/pulls)
+[![GitHub stars](https://img.shields.io/github/stars/yuzoiwasaki/security-checksheet.svg?style=social)](https://github.com/yuzoiwasaki/security-checksheet/stargazers)
+
 オープンソースのセキュリティチェックシートです。誰でも自由に使ってください。PRも歓迎です。みんなでより良いセキュリティチェックシートを作っていきましょう！
 
 自社におけるセキュリティ観点でのチェックにも使えるかもしれません。
