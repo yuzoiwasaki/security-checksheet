@@ -8,23 +8,18 @@ import csv
 import re
 
 def parse_checksheet_md(file_path):
-    """Markdownファイルを解析してチェックシートのデータを抽出"""
     checksheet_data = []
     
     with open(file_path, 'r', encoding='utf-8') as file:
         content = file.read()
     
-    # テーブル行を抽出（ヘッダー行を除く）
     lines = content.strip().split('\n')
     
     for line in lines:
-        # テーブル行のパターンをチェック（| で始まり | で終わる行）
         if line.startswith('|') and line.endswith('|'):
-            # ヘッダー行をスキップ
             if '重要性' in line or '----' in line:
                 continue
             
-            # 行の内容を分割
             columns = [col.strip() for col in line.split('|')[1:-1]]
             
             if len(columns) >= 4:
@@ -33,7 +28,6 @@ def parse_checksheet_md(file_path):
                 category = columns[2]
                 question = columns[3]
                 
-                # 重要性から絵文字を除去してシンプルなテキストに変換
                 importance_clean = importance.replace('🟥 高', '高').replace('🟧 中', '中').replace('🟩 低', '低')
                 
                 checksheet_data.append({
@@ -63,7 +57,6 @@ def write_csv(data, output_file):
 
 def main():
     """メイン処理"""
-    # スクリプトのディレクトリを取得
     import os
     script_dir = os.path.dirname(os.path.abspath(__file__))
     project_root = os.path.dirname(script_dir)
